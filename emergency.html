@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency - ArogyaLink</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* CSS STYLES (Same as before, ensuring professional look) */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --ocean-green: #008080;
+            --light-teal: #40B4B4;
+            --dark-blue: #0A1931;
+            --white: #ffffff;
+            --light-grey: #f4f4f9;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: var(--light-grey);
+            color: var(--dark-blue);
+        }
+
+        header {
+            background-color: var(--ocean-green);
+            box-shadow: 0 2px 4px var(--shadow-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border-radius: 4px;
+        }
+
+        .nav-links li a:hover {
+            background-color: var(--light-teal);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .emergency-locator {
+            background-color: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px var(--shadow-light);
+        }
+
+        .emergency-locator h1 {
+            color: var(--ocean-green);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-teal);
+            padding-bottom: 0.5rem;
+        }
+
+        .emergency-locator p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        /* Location Input Styling */
+        .location-input {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: var(--light-grey);
+        }
+
+        .location-input-row {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .location-input-row button {
+            background-color: var(--ocean-green);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .location-input-row button:hover {
+            background-color: var(--light-teal);
+        }
+        
+        #search-btn {
+            background-color: #d32f2f; /* Red for high priority search */
+        }
+        
+        #search-btn:hover {
+            background-color: #c62828;
+        }
+
+        #location-status {
+            font-style: italic;
+            color: #d32f2f;
+            font-weight: 600;
+        }
+        
+        .distance-input {
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 80px;
+            text-align: center;
+        }
+
+        .ambulance-section {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background-color: #ffe0b2;
+            border-radius: 10px;
+            border: 2px dashed #ff9800;
+        }
+
+        .ambulance-section h2 {
+            color: #d84315;
+            margin-bottom: 1rem;
+        }
+
+        .ambulance-button {
+            display: inline-block;
+            background-color: #d32f2f;
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(211, 47, 47, 0.4);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .ambulance-button:hover {
+            background-color: #c62828;
+            transform: scale(1.05);
+        }
+
+        .map-container {
+            margin: 2rem 0;
+        }
+
+        #map-placeholder {
+            height: 400px;
+            background-color: #e0f2f1;
+            border: 1px solid var(--ocean-green);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--ocean-green);
+            font-size: 1.2rem;
+        }
+
+        .results-container h2 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+
+        .instruction {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .result-card {
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid;
+            border-radius: 8px;
+            background-color: var(--light-grey);
+            box-shadow: 0 2px 5px var(--shadow-light);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .result-card.hospital {
+            border-left-color: #ff5722;
+        }
+
+        .result-card.pharmacy {
+            border-left-color: var(--ocean-green);
+        }
+
+        .result-card h3 {
+            margin-bottom: 0.25rem;
+            color: var(--dark-blue);
+        }
+
+        .result-card p {
+            margin: 0;
+            color: #777;
+        }
+
+        .contact-info {
+            font-size: 0.9rem;
+            color: var(--dark-blue);
+            font-weight: 500;
+        }
+
+        .details-link {
+            align-self: flex-end;
+            background-color: var(--light-teal);
+            color: var(--white);
+            padding: 0.75rem 1.25rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .details-link:hover {
+            background-color: var(--ocean-green);
+        }
+
+        footer {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">ArogyaLink</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="emergency-locator">
+            <h1><i class="fas fa-heartbeat"></i> Emergency Services Locator</h1>
+            <p>Find nearby Hospitals and Pharmacies quickly. Your health is our priority.</p>
+            
+            <div class="location-input">
+                <p id="location-status">Location not yet set. Click 'Share Current Location' or search for a location.</p>
+
+                <div class="location-input-row">
+                    <button id="get-location-btn"><i class="fas fa-map-marker-alt"></i> Share Current Location</button>
+                    
+                    <label for="distance">Search within (km):</label>
+                    <input type="number" id="distance" class="distance-input" min="1" value="5">
+                    
+                    <button id="search-btn"><i class="fas fa-search"></i> Find Services</button>
+                </div>
+            </div>
+
+            <div class="ambulance-section">
+                <h2>Need an Ambulance Immediately?</h2>
+                <p>Click below to dial our emergency number. An automated message will be sent to nearby hospitals to prepare.</p>
+                <a href="tel:108" class="ambulance-button"><i class="fas fa-ambulance"></i> Call Ambulance (108)</a>
+            </div>
+
+            <div class="map-container">
+                <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11345.92215444876!2d86.1770966!3d22.7845347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f5e31000000001%3A0x64c856750382d627!2sJamshedpur%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1633519808940!5m2!1sen!2sin"
+  width="600"
+  height="450"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+></iframe>
+            <div class="results-container">
+                <h2>Nearest Services (Top 5 Hospitals)</h2>
+                <p class="instruction">The *nearest 5 hospitals* found will be listed below with contact details. Click 'Get Directions' to open Google Maps.</p>
+                
+                <div id="results-list">
+                    <p style="text-align:center; color:#555;">No results yet. Please share your location and search.</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ArogyaLink. All rights reserved. | Emergency Services.</p>
+    </footer>
+
+    <script>
+        const getLocationBtn = document.getElementById('get-location-btn');
+        const searchBtn = document.getElementById('search-btn');
+        const locationStatus = document.getElementById('location-status');
+        const resultsList = document.getElementById('results-list');
+        const mapPlaceholder = document.getElementById('map-placeholder');
+        
+        let userLocation = null; // Stores {lat, lng}
+
+        // --- 1. GEOLOCATION FUNCTIONALITY ---
+        getLocationBtn.addEventListener('click', () => {
+            if (navigator.geolocation) {
+                locationStatus.textContent = "Locating you, please allow permission...";
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                locationStatus.textContent = "Geolocation is not supported by this browser.";
+            }
+        });
+
+        function showPosition(position) {
+            userLocation = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            locationStatus.innerHTML = <i class="fas fa-check-circle"></i> Location Set: **${userLocation.lat.toFixed(4)}, ${userLocation.lng.toFixed(4)}**;
+            console.log("User Location:", userLocation);
+        }
+
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    locationStatus.textContent = "User denied the request for Geolocation. Cannot search nearby services.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    locationStatus.textContent = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    locationStatus.textContent = "The request to get user location timed out.";
+                    break;
+                default:
+                    locationStatus.textContent = "An unknown error occurred.";
+                    break;
+            }
+            userLocation = null;
+        }
+
+        // --- 2. DYNAMIC SEARCH FUNCTIONALITY ---
+        searchBtn.addEventListener('click', () => {
+            if (!userLocation) {
+                alert("Please share your current location first!");
+                return;
+            }
+            
+            const distance = document.getElementById('distance').value;
+            locationStatus.textContent = Searching within ${distance} km...;
+            
+            // In a real application, you would make an API call here 
+            // (e.g., to Google Places API) using userLocation and distance.
+            
+            // For this HTML/JS demonstration, we use Mock Data:
+            simulateSearch(userLocation, distance);
+
+            // Update Map Placeholder
+            updateMapPlaceholder(userLocation);
+        });
+
+        function updateMapPlaceholder(location) {
+            const mapLink = https://www.google.com/maps/search/hospital+and+pharmacy/@${location.lat},${location.lng},14z;
+            mapPlaceholder.innerHTML = `
+                <p>🗺 *Interactive Map View*</p>
+                <a href="${mapLink}" target="_blank" style="color:var(--ocean-green); font-weight:600;">
+                    Click here to open a search for nearby services in Google Maps
+                </a>
+                <p style="margin-top: 10px;">Showing services near ${location.lat.toFixed(4)}, ${location.lng.toFixed(4)}</p>
+            `;
+        }
+
+        // --- 3. MOCK DATA & RENDERING (Simulating API Response) ---
+        function simulateSearch(location, distance) {
+            // Mock data structure, simulating the top 5 nearest hospitals
+            const mockHospitals = [
+                { name: "Global Care Hospital", dist: 1.2, phone: "+91 98765 43210", email: "global@hospital.com", lat: location.lat + 0.005, lng: location.lng - 0.003 },
+                { name: "City Trauma Center", dist: 2.5, phone: "+91 99887 76655", email: "trauma@center.org", lat: location.lat - 0.002, lng: location.lng + 0.008 },
+                { name: "Arogya Wellness Clinic", dist: 3.1, phone: "+91 80000 11111", email: "clinic@arogya.net", lat: location.lat + 0.012, lng: location.lng + 0.001 },
+                { name: "Emergency Life Hospital", dist: 4.0, phone: "+91 76543 21098", email: "life@em.in", lat: location.lat - 0.008, lng: location.lng - 0.006 },
+                { name: "District General Hospital", dist: 4.8, phone: "+91 90000 90000", email: "district@gen.gov", lat: location.lat + 0.001, lng: location.lng + 0.015 }
+            ];
+
+            // Filter by requested distance (though mock data is already constrained)
+            const filteredResults = mockHospitals.filter(h => h.dist <= distance).slice(0, 5);
+            
+            renderResults(filteredResults);
+        }
+
+        function renderResults(hospitals) {
+            resultsList.innerHTML = '';
+            
+            if (hospitals.length === 0) {
+                resultsList.innerHTML = '<p style="text-align:center; color:#555;">No hospitals found within the specified distance.</p>';
+                return;
+            }
+
+            hospitals.forEach(hospital => {
+                // Creates a Google Maps link to get directions to the hospital
+                const directionsLink = https://www.google.com/maps/dir/?api=1&destination=${hospital.lat},${hospital.lng};
+                
+                const card = document.createElement('div');
+                card.className = 'result-card hospital';
+                card.innerHTML = `
+                    <h3>${hospital.name}</h3>
+                    <p>Distance: *${hospital.dist.toFixed(1)} km*</p>
+                    <p class="contact-info">
+                        <i class="fas fa-phone"></i> *Phone:* <a href="tel:${hospital.phone}">${hospital.phone}</a>
+                    </p>
+                    <p class="contact-info">
+                        <i class="fas fa-envelope"></i> *Email:* <a href="mailto:${hospital.email}">${hospital.email}</a>
+                    </p>
+                    <a href="${directionsLink}" target="_blank" class="details-link">
+                        <i class="fas fa-location-arrow"></i> Get Directions (Google Maps)
+                    </a>
+                `;
+                resultsList.appendChild(card);
+            });
+        }
+        
+        // --- 4. INITIAL MAP REDIRECTION (for demonstration) ---
+        // A simple function to redirect for a generic map search
+        document.querySelector('.map-container').addEventListener('click', (e) => {
+            // Only trigger if no search has been performed (i.e., userLocation is null)
+            if (!userLocation && e.target.tagName !== 'A') { 
+                alert("Please click 'Share Current Location' first to search nearby services.");
+            }
+        });
+
+    </script>
+</body>
+</html>

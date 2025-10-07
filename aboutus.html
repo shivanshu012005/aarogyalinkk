@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArogyaLink - The Future of Connected Health</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for Inter font and custom colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'arogya-primary': '#2563EB', // Blue-700 for main accents
+                        'arogya-accent': '#10B981',  // Emerald-500 for secondary accents/clarity
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for professional look and feel */
+        .card-shadow {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-10 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="text-2xl font-extrabold text-arogya-primary tracking-tight">
+                ArogyaLink
+            </div>
+            <!-- Simple Navigation (for single-page structure) -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#mission" class="text-gray-600 hover:text-arogya-primary transition duration-150">Mission</a>
+                <a href="#problem-solution" class="text-gray-600 hover:text-arogya-primary transition duration-150">Solution</a>
+                <a href="#features" class="text-gray-600 hover:text-arogya-primary transition duration-150">Features</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section: Title and Mission -->
+        <section id="mission" class="py-16 sm:py-24 bg-arogya-primary/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-5xl sm:text-6xl font-extrabold text-arogya-primary mb-4">
+                    ArogyaLink
+                </h1>
+                <p class="text-3xl sm:text-4xl font-light text-gray-700 mb-8">
+                    The Future of Connected Health
+                </p>
+                <div class="max-w-3xl mx-auto">
+                    <span class="inline-block text-lg font-semibold text-arogya-accent uppercase tracking-wider mb-3">Our Mission: Decode. Connect. Empower.</span>
+                    <p class="text-xl leading-relaxed text-gray-600">
+                        Healthcare is complex. Your health data shouldn't be. At ArogyaLink, we're solving the fundamental issues of confusion and fragmentation in medical care. We believe patients deserve to understand their health completely, and providers need seamless tools to deliver connected care.
+                    </p>
+                    <p class="mt-4 text-xl leading-relaxed text-gray-600">
+                        We are building an intelligent, unified platform that translates the complexity of medicine into clarity, giving patients full control and understanding over their well-being.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem. Our Solution. Section -->
+        <section id="problem-solution" class="py-16 sm:py-24 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">
+                    The Problem. <span class="text-arogya-primary">Our Solution.</span>
+                </h2>
+
+                <!-- Responsive Grid for Challenge/Solution Pairs -->
+                <div class="space-y-10">
+                    <!-- Pair 1 -->
+                    <div class="bg-gray-100 p-6 sm:p-8 rounded-xl card-shadow grid md:grid-cols-2 gap-6 items-center">
+                        <div>
+                            <span class="text-sm font-semibold text-red-500 uppercase tracking-wider mb-2 block">The Challenge</span>
+                            <h3 class="text-2xl font-bold text-gray-900">Medical Jargon</h3>
+                            <p class="mt-2 text-gray-600">(Illegible prescriptions, complex lab results)</p>
+                        </div>
+                        <div class="border-l-4 border-arogya-accent md:pl-6 pt-4 md:pt-0">
+                            <span class="text-sm font-semibold text-arogya-accent uppercase tracking-wider mb-2 block">ArogyaLink's Innovative Solution</span>
+                            <h3 class="text-2xl font-bold text-arogya-primary">The Health Translator</h3>
+                            <p class="mt-2 text-gray-700">Scan a prescription or report, and our AI instantly converts it into simple, clear, readable text.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pair 2 -->
+                    <div class="bg-gray-100 p-6 sm:p-8 rounded-xl card-shadow grid md:grid-cols-2 gap-6 items-center">
+                        <div>
+                            <span class="text-sm font-semibold text-red-500 uppercase tracking-wider mb-2 block">The Challenge</span>
+                            <h3 class="text-2xl font-bold text-gray-900">Scattered Records</h3>
+                            <p class="mt-2 text-gray-600">(Lost files, forgotten history)</p>
+                        </div>
+                        <div class="border-l-4 border-arogya-accent md:pl-6 pt-4 md:pt-0">
+                            <span class="text-sm font-semibold text-arogya-accent uppercase tracking-wider mb-2 block">ArogyaLink's Innovative Solution</span>
+                            <h3 class="text-2xl font-bold text-arogya-primary">Unified Medical Record</h3>
+                            <p class="mt-2 text-gray-700">A secure, lifetime digital hub for all appointments, reports, and treatments, accessible anywhere.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pair 3 -->
+                    <div class="bg-gray-100 p-6 sm:p-8 rounded-xl card-shadow grid md:grid-cols-2 gap-6 items-center">
+                        <div>
+                            <span class="text-sm font-semibold text-red-500 uppercase tracking-wider mb-2 block">The Challenge</span>
+                            <h3 class="text-2xl font-bold text-gray-900">Adherence & Forgetfulness</h3>
+                            <p class="mt-2 text-gray-600">(Missing doses, forgetting appointments)</p>
+                        </div>
+                        <div class="border-l-4 border-arogya-accent md:pl-6 pt-4 md:pt-0">
+                            <span class="text-sm font-semibold text-arogya-accent uppercase tracking-wider mb-2 block">ArogyaLink's Innovative Solution</span>
+                            <h3 class="text-2xl font-bold text-arogya-primary">Personal Health Assistant</h3>
+                            <p class="mt-2 text-gray-700">Smart alerts for medication, water intake, mealtimes, and personalized activity reminders.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pair 4 -->
+                    <div class="bg-gray-100 p-6 sm:p-8 rounded-xl card-shadow grid md:grid-cols-2 gap-6 items-center">
+                        <div>
+                            <span class="text-sm font-semibold text-red-500 uppercase tracking-wider mb-2 block">The Challenge</span>
+                            <h3 class="text-2xl font-bold text-gray-900">Inconvenience</h3>
+                            <p class="mt-2 text-gray-600">(Finding medicine, booking care)</p>
+                        </div>
+                        <div class="border-l-4 border-arogya-accent md:pl-6 pt-4 md:pt-0">
+                            <span class="text-sm font-semibold text-arogya-accent uppercase tracking-wider mb-2 block">ArogyaLink's Innovative Solution</span>
+                            <h3 class="text-2xl font-bold text-arogya-primary">Effortless Access & Commerce</h3>
+                            <p class="mt-2 text-gray-700">Book appointments, contact emergency services, and order and compare medicines based on composition—all in one place.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interpreting "Export to Sheets" as a functional CTA -->
+                <div class="mt-16 text-center">
+                    <button onclick="alert('Demo: Data would be prepared for export now!')" 
+                        class="px-8 py-3 bg-arogya-accent text-white font-bold text-lg rounded-full shadow-lg hover:bg-emerald-600 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-arogya-accent/50">
+                        Export My Health Data
+                    </button>
+                    <p class="mt-3 text-sm text-gray-500">Take control of your data with simple export functionality.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Features Section -->
+        <section id="features" class="py-16 sm:py-24 bg-arogya-primary/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">
+                    Core Features Driving Our Innovation
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Feature Card 1: AI-Driven Clarity -->
+                    <div class="bg-white p-6 rounded-xl card-shadow border-t-4 border-arogya-primary transform hover:scale-[1.02] transition duration-300">
+                        <svg class="w-10 h-10 text-arogya-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9.25 10A1 1 0 0110.25 9H13.75A1 1 0 0114.75 10L14.25 17M10 20H14M12 4V10M12 20V17M17 5h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V6a1 1 0 011-1zM5 5h2a1 1 0 011 1v12a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1z"></path></svg>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">AI-Driven Clarity</h3>
+                        <p class="text-gray-600">
+                            Utilizing advanced OCR and NLP to read and translate handwritten prescriptions and complex diagnostic reports into understandable language.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 2: Continuous Monitoring -->
+                    <div class="bg-white p-6 rounded-xl card-shadow border-t-4 border-arogya-accent transform hover:scale-[1.02] transition duration-300">
+                        <svg class="w-10 h-10 text-arogya-accent mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9h9"></path></svg>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Continuous Monitoring</h3>
+                        <p class="text-gray-600">
+                            Seamless integration with wearable devices to provide real-time, continuous health data for both patient and doctor, enabling proactive care.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 3: Holistic Management -->
+                    <div class="bg-white p-6 rounded-xl card-shadow border-t-4 border-arogya-primary transform hover:scale-[1.02] transition duration-300">
+                        <svg class="w-10 h-10 text-arogya-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.244-4.243a8 8 0 1111.314 0zM12 11a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Holistic Management</h3>
+                        <p class="text-gray-600">
+                            Combining e-commerce (medicine comparison/ordering), telemedicine (appointments), and emergency access in a single, powerful application.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center max-w-4xl mx-auto">
+                    <p class="text-lg text-gray-700 font-medium">
+                        We are dedicated to building a secure, accurate, and transformative link between you and your health.
+                    </p>
+                    <p class="text-2xl font-extrabold text-arogya-primary mt-4">
+                        ArogyaLink. <span class="text-arogya-accent">Your Health, Clearly.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <!-- Logo/Copyright -->
+            <div class="text-lg font-bold mb-4 md:mb-0">
+                &copy; 2024 ArogyaLink. All rights reserved.
+            </div>
+
+            <!-- Footer Links -->
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-150">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-150">Terms of Service</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-150">Careers</a>
+                <a href="#" class="text-gray-400 hover:text-arogya-accent transition duration-150">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple alert function to handle the button click without using window.alert
+        function alert(message) {
+            const container = document.getElementById('alert-container');
+            if (container) {
+                container.innerHTML = `
+                    <div class="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center p-4 z-50">
+                        <div class="bg-white p-6 rounded-lg shadow-2xl max-w-sm w-full text-center">
+                            <p class="text-lg font-semibold text-gray-800 mb-4">${message}</p>
+                            <button onclick="document.getElementById('alert-container').innerHTML = ''" 
+                                class="px-4 py-2 bg-arogya-primary text-white font-medium rounded hover:bg-blue-800 transition">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+    </script>
+    <div id="alert-container"></div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - ASHUHEALTH</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+  <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+    <h2 class="text-2xl font-bold mb-6 text-center text-green-600">Create Account</h2>
+    <form id="signup-form" class="space-y-4">
+      <input type="text" placeholder="Full Name" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"/>
+      <input type="email" placeholder="Email" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"/>
+      <input type="password" placeholder="Password" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"/>
+      <input type="password" placeholder="Confirm Password" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"/>
+      <button type="submit" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition">Sign Up</button>
+    </form>
+    <p class="text-sm text-center mt-4">Already have an account? 
+      <a href="login.html" class="text-blue-600 hover:underline">Login</a>
+    </p>
+  </div>
+
+  <script>
+    document.getElementById('signup-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert("Sign Up successful! (Demo only, no backend yet)");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ArogyaLink</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Import a professional Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        /* --- Global Reset & Body Styling --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f9; /* Light background */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures footer sticks to the bottom */
+        }
+
+        /* --- Header & Navigation Bar --- */
+        header {
+            background-color: #278e8a;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 15px 5%;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.6em;
+            font-weight: 700;
+            color:#fff; /* Primary brand color: Blue */
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 5px; /* Spacing between links */
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 10px 15px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffffff;
+            background-color: #007bff;
+        }
+        
+        /* Highlight Emergency link */
+        .nav-links a.emergency {
+            color: #dc3545; /* Red for emphasis */
+            font-weight: 600;
+            border: 2px solid #dc3545;
+            padding: 8px 15px;
+            border-radius: 50px;
+            margin-left: 15px;
+        }
+
+        .nav-links a.emergency:hover {
+            background-color: #dc3545;
+            color: #ffffff;
+        }
+
+        /* --- Main Content Area (Contact Cards) --- */
+        .main-content {
+            flex-grow: 1; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        .contact-container {
+            background-color: #fff;
+            padding: 50px 40px;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); 
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007bff;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        /* --- Contact Methods Layout (Flexbox) --- */
+        .contact-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        /* --- Contact Card Styling (Aesthetics) --- */
+        .contact-card {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            background-color: #ffffff;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            text-decoration: none; 
+            color: #333;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* Professional Hover Effect */
+        .contact-card:hover {
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 45px rgba(0, 123, 255, 0.2); 
+            border-color: #007bff;
+        }
+
+        /* Card Icons */
+        .icon {
+            font-size: 3.5em;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .contact-card h2 {
+            color: #007bff;
+            font-size: 1.6em;
+            margin-bottom: 5px;
+        }
+
+        .detail {
+            display: block;
+            margin-top: 15px;
+            font-weight: 600;
+            font-size: 1.3em;
+            color: #333;
+        }
+
+        .note {
+            font-size: 0.9em;
+            color: #999;
+            margin-top: 20px;
+        }
+        
+        /* --- Footer Styling --- */
+        footer {
+            background-color: #333;
+            color: #f4f7f9;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            margin-top: auto; 
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #5bb2ff;
+        }
+
+        /* --- Responsive Design (Mobile) --- */
+        @media (max-width: 992px) {
+            /* Hide most links on smaller screens for cleaner look, keep Emergency visible */
+            .nav-links li:not(:last-child) {
+                display: none; 
+            }
+            .navbar {
+                justify-content: space-between;
+            }
+        }
+        @media (max-width: 700px) {
+            .contact-methods {
+                flex-direction: column; /* Stack cards vertically */
+            }
+            .contact-container {
+                padding: 30px 20px;
+            }
+        }
+        @media (max-width: 500px) {
+            .nav-links a.emergency {
+                padding: 5px 10px;
+                font-size: 0.9em;
+                margin-left: 5px;
+            }
+            .logo {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">ArogyaLink</a>
+            
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#" class="active">Contact</a></li>
+                <li><a href="#" class="emergency">Emergency</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <div class="contact-container">
+            <h1>Contact Us</h1>
+            <p class="subtitle">We're ready to assist you! Choose your preferred method below.</p>
+
+            <div class="contact-methods">
+                
+                <a href="mailto:indufashion4@gmail.com" class="contact-card">
+                    <i class="fas fa-envelope icon"></i>
+                    <h2>Send Us a Mail</h2>
+                    <p>For detailed inquiries, product questions, or support.</p>
+                    <span class="detail">indufashion4@gmail.com</span>
+                </a>
+
+                <a href="tel:+919470116760" class="contact-card">
+                    <i class="fas fa-phone-alt icon"></i>
+                    <h2>Give Us a Call</h2>
+                    <p>For immediate assistance or quick questions during business hours.</p>
+                    <span class="detail">+91 9470 116760</span>
+                </a>
+
+            </div>
+            
+            <p class="note">We aim to respond to all emails within 1 business day.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 ArogyaLink. All rights reserved. | 
+        <a href="#">Privacy Policy</a> | 
+        <a href="#">Terms of Service</a>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ArogyaLink - Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-gradient-to-br from-teal-100 to-gray-100 min-h-screen flex flex-col">
+
+  <!-- ✅ Fixed Top Navigation Bar -->
+  <header class="fixed top-0 left-0 w-full bg-oceanblue shadow-md py-4 px-6 flex justify-between items-center z-50">
+    <h1 class="text-2xl font-bold text-teal-600 flex items-center">
+      <i class="fa-solid fa-heart-pulse mr-2 text-red-500"></i>
+      Arogya<span class="text-gray-700 ml-1">Link</span>
+    </h1>
+    <nav class="space-x-6 text-gray-600">
+      <a href="index.html" class="hover:text-teal-600">Home</a>
+      <a href="about.html" class="hover:text-teal-600">About</a>
+      <a href="contact.html" class="hover:text-teal-600">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ✅ Centered Login Form Below Navbar -->
+  <main class="flex-grow flex items-center justify-center pt-20">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md hover:shadow-xl transition">
+      <h2 class="text-2xl font-bold mb-6 text-center text-teal-600">Login</h2>
+
+      <form id="login-form" class="space-y-4">
+        <input type="email" placeholder="Email" required
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400"/>
+        <input type="password" placeholder="Password" required
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400"/>
+
+        <!-- Forgot Password link -->
+        <div class="text-right">
+          <a href="forget.html" class="text-sm text-blue-600 hover:underline">Forgot Password?</a>
+        </div>
+
+        <button type="submit"
+          class="w-full bg-teal-500 text-white py-2 rounded-lg hover:bg-teal-600 active:scale-95 transition">
+          Login
+        </button>
+      </form>
+
+      <p class="text-sm text-center mt-4">
+        Don’t have an account?
+        <a href="sign.html" class="text-blue-600 hover:underline">Sign Up</a>
+      </p>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = e.target.querySelector('input[type="email"]').value.trim();
+      const password = e.target.querySelector('input[type="password"]').value.trim();
+
+      if (!email || !password) {
+        alert("Please enter both email and password.");
+        return;
+      }
+
+      alert(`Welcome ${email}! (Demo only, no backend yet)`);
+    });
+  </script>
+
+</body>
+</html>

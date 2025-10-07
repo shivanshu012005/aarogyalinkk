@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Medical Products</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background-color: #f4f4f9; padding: 20px; }
+        .feature-page { background-color: #fff; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); padding: 40px; position: relative; }
+        .feature-page h2 { color: #008080; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-top: 0; }
+        .cart-icon { font-size: 24px; color: #008080; cursor: pointer; padding: 5px; position: absolute; top: 10px; left: 10px; }
+        .cart-icon span { font-size: 14px; vertical-align: top; color: red; font-weight: bold; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
+        .product-card { background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 15px; text-align: center; }
+        .product-card img { max-width: 100%; height: 100px; object-fit: contain; border-radius: 5px; margin-bottom: 10px; }
+        .product-card button { background-color: #ff9900; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; }
+        input[type="text"] { width: 100%; padding: 10px; border: 1px solid #008080; border-radius: 5px; box-sizing: border-box; }
+    </style>
+</head>
+<body>
+    <div class="feature-page">
+        <div class="cart-icon">🛒 <span>3</span></div>
+        <h2 style="text-align: center;">3. Order Medical Products 🛒</h2>
+        <p style="text-align: center;">Browse and purchase health products, medicines, and equipment. View product images, prices, and add items to your cart.</p>
+
+        <input type="text" placeholder="Search products, brands, or categories...">
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/100x100?text=Medicine" alt="Medicine Bottle">
+                <h4>Allergy Relief Cap</h4>
+                <p>₹ 240.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/100x100?text=Bandage" alt="First Aid Kit">
+                <h4>First Aid Kit (Essential)</h4>
+                <p>₹ 499.00</p>
+                <button>Add to Cart</button>
+            </div>
+             <div class="product-card">
+                <img src="https://via.placeholder.com/100x100?text=Thermometer" alt="Digital Thermometer">
+                <h4>Digital Thermometer</h4>
+                <p>₹ 320.00</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
